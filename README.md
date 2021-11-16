@@ -1,6 +1,6 @@
 # SoongsilBERT:BEEP! 
 
-[![Run on Ainize](https://ainize.ai/images/run_on_ainize_button.svg)](https://ainize.web.app/redirect?git_repo=https://github.com/jason9693/SoongsilBERT-base-beep-deploy)
+[![Run on Ainize](https://ainize.ai/images/run_on_ainize_button.svg)](https://ainize.web.app/redirect?git_repo=https://github.com/jason9693/KoGPT-Kakaobrain-deploy)
 
 한국어 혐오성 게시글 분류모델.
 
