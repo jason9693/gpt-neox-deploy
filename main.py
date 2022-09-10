@@ -13,9 +13,10 @@ model = AutoModelForCausalLM.from_pretrained(
   'kakaobrain/kogpt', revision='KoGPT6B-ryan1.5b',
   pad_token_id=tokenizer.eos_token_id,
   torch_dtype=torch.float16, low_cpu_mem_usage=True
-).to(device='cuda', non_blocking=True)
+)
 _ = model.eval()
 
+print("load finished")
 
 st.markdown("""# KoGPT(카카오브레인) 시연하기
 
@@ -32,7 +33,7 @@ go = st.button("Generate")
 st.markdown("## 생성 결과")
 if go:
     with torch.no_grad():
-        tokens = tokenizer.encode(prompt, return_tensors='pt').to(device='cuda', non_blocking=True)
+        tokens = tokenizer.encode(prompt, return_tensors='pt')
         gen_tokens = model.generate(tokens, do_sample=True, temperature=0.8, max_length=length, use_cache=True)
         generated = tokenizer.batch_decode(gen_tokens)[0]
     st.write(generated)

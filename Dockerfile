@@ -1,4 +1,4 @@
-FROM pytorch/pytorch:1.8.0-cuda10.1-cudnn7-runtime
+FROM huggingface/transformers-pytorch-deepspeed-latest-gpu
 
 RUN apt-get update && \
     apt-get install -y && \
@@ -8,9 +8,6 @@ RUN apt-get update && \
 
 
 RUN pip install --upgrade pip
-RUN pip install transformers==3.5.0 \
-    flask \
-    waitress 
 
 WORKDIR /app
 COPY . .
